@@ -21,15 +21,10 @@
                 <span class="d-none d-sm-inline">
                   <!-- <router-link class="btn" :to="{name: 'Customers'}">Create Order</router-link> -->
                 </span>
-                <a href="#" class="btn btn-success d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-product">
-                  <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
-                  Create new product
-                </a>
                 <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
                   <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
-                  Create new customer
+                  Create new Admin
                 </a>
                 <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
                   <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
@@ -308,10 +303,10 @@
               <input v-model="invitation.name" type="text" class="form-control" name="example-text-input name" id="name" placeholder="name">
               </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-12">
               <div class="mb-3">
                 <label class="form-label">Enter Email of User</label>
-                <input v-model="invitation.email" type="text" class="form-control" name="example-text-input price" id="price" placeholder="Your Product Price">
+                <input v-model="invitation.email" type="text" class="form-control" name="example-text-input email" id="email" placeholder="Your Email">
               </div>
             </div>
           </div>
