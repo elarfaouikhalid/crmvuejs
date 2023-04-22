@@ -47,12 +47,6 @@ export default {
             const response = await axios.get(`employee/invite/${token}`);
             commit("setInvitationToken", response.data.token)
             commit("setEmail", response.data.email)
-            swal({
-              title: "Error!",
-              text: error.response.data.success,
-              icon: "error",
-              button: "OK",
-            });
       } catch (error) {
         swal({
             title: "Error!",
