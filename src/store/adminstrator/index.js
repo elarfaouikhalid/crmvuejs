@@ -52,21 +52,9 @@ export default {
         async createcompany(_, companyData) {
             try {
                 const response = await axios.post("create/company", companyData)
-                swal({
-                    title: "Success!",
-                    text: response.data.success,
-                    icon: "success",
-                    button: "OK",
-                    timer: 2000
-                })
+                showAlert('Success!', response.data.success, 'success')
             } catch (error) {
-                console.log(error);
-                swal({
-                    title: "Error!",
-                    text: error.response.data.message,
-                    icon: "error",
-                    button: "OK",
-                });
+                showAlert('Error!', error.response.data.message, 'error');
             }
         },
         async getcompanies({ commit, state }) {
