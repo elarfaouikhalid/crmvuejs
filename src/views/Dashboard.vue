@@ -344,7 +344,6 @@
 </template>
   
 <script>  
-import axios from 'axios'
 import Navbar from "@/components/Navbar.vue";
 import Loading from "@/components/Loading.vue";
 import { mapActions, mapGetters } from "vuex";
@@ -375,13 +374,9 @@ mounted() {
 created() {
   this.getcompanies();
   this.GetInvitations()
-  // this.dropdownText = `Last ${this.getDays} days`
-  // this.activeItem = this.getDays
-  // this.SetupRealTime();
 },
 methods: {
   ...mapActions({
-    // 'signOut': 'auth/signOut',
     "Createcompany": "adminstrator/createcompany",
     "getcompanies": "adminstrator/getcompanies",
     "GetInvitations": "adminstrator/getInvitations",
@@ -402,9 +397,11 @@ methods: {
       this.getcompanies();
     }
   },
-  SendInvitation() {
+   async SendInvitation() {
     console.log(this.invitation)
-    this.sendInvitation(this.invitation)
+    await this.sendInvitation(this.invitation)
+    this.GetInvitations()
+    
   },
   showInvitationModal(companyId) {
     this.invitation.company_id = companyId
