@@ -1,5 +1,6 @@
 import axios from 'axios';
 import swal from 'sweetalert';
+import { showAlert } from '@/alert';
 
 export default {
     namespaced: true,
@@ -79,21 +80,9 @@ export default {
         async sendInvitation({ commit }, Invitationdata) {
             try {
                 const response = await axios.post("invitation/send", Invitationdata)
-                swal({
-                    title: "Success!",
-                    text: response.data.success,
-                    icon: "success",
-                    button: "OK",
-                    timer: 2000
-                })
+                showAlert('Success!', response.data.success, 'success')
             } catch (error) {
-                console.log(error);
-                swal({
-                    title: "Error!",
-                    text: error.response.data.message,
-                    icon: "error",
-                    button: "OK",
-                });
+                showAlert('Error!', error.response.data.message, 'error');
             }
         }, 
         async getInvitations({ commit, state }) {
@@ -101,7 +90,6 @@ export default {
                 const response = await axios.get("invitations/data")
                 console.log(response.data.invitations.data[0]["id"])
                 commit('setInvitations', response.data.invitations.data);
-                console.log(state.invitations)
             } catch (error) {
                 
             }
@@ -109,21 +97,9 @@ export default {
         async cancelInvitation({ commit }, InvitationId) {
             try {
                 const response = await axios.patch(`invitations/update/${InvitationId}`)
-                swal({
-                    title: "Success!",
-                    text: response.data.success,
-                    icon: "success",
-                    button: "OK",
-                    timer: 2000
-                })
+                .then(() => showAlert('Success!', response.data.success, 'success'))
             } catch (error) {
-                console.log(error);
-                swal({
-                    title: "Error!",
-                    text: error.response.data.message,
-                    icon: "error",
-                    button: "OK",
-                });
+                showAlert('Error!', error.response.data.message, 'error');
             }
         }, 
     },
