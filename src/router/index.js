@@ -41,7 +41,7 @@ const routes = [
     meta: { requiresAuth: false, requiresAdmin: false },
     beforeEnter: async (to, from, next) => {
       const token = to.params.id;
-      console.log(token)
+      console.log(store.getters['employee/checkInvitation'])
       if (token) {
         try {
           await store.dispatch('employee/Invitationcheck', token)
@@ -74,7 +74,7 @@ router.beforeEach((to, from, next) => {
   const requiresAuth = to.meta.requiresAuth
   const requiresAdmin = to.meta.requiresAdmin
   const authenticated = store.getters['auth/authenticated']
-  const isAdmin = store.getters['auth/isadmin']
+  const isAdmin = store.getters['auth/isadmin'] ?? false
 
   if (requiresAuth && !authenticated) {
     next({

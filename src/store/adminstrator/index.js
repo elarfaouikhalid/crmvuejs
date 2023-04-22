@@ -5,7 +5,7 @@ import { showAlert } from '@/alert';
 export default {
     namespaced: true,
     state: {
-        companies: [], 
+        companies: [],
         invitations: [],
         companyName: '',
         companyId: null,
