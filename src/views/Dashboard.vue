@@ -374,13 +374,9 @@ mounted() {
 created() {
   this.getcompanies();
   this.GetInvitations()
-  // this.dropdownText = `Last ${this.getDays} days`
-  // this.activeItem = this.getDays
-  // this.SetupRealTime();
 },
 methods: {
   ...mapActions({
-    // 'signOut': 'auth/signOut',
     "Createcompany": "adminstrator/createcompany",
     "getcompanies": "adminstrator/getcompanies",
     "GetInvitations": "adminstrator/getInvitations",
