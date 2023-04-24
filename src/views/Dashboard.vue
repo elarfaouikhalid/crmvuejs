@@ -424,7 +424,8 @@ methods: {
     });
     
     if (confirmed) {
-      this.CancelInvitation(id);
+      await this.CancelInvitation(id);
+      this.GetInvitations()
     }
   },
 },
