@@ -7,13 +7,11 @@
 <div class="animated bounceInDown">
   <div class="container">
     <div class="toggle-switch">
-      <div :class="{ active: activeTab === 'admin' }" @click="activeTab = 'admin'">Administrator</div>
-      <div :class="{ active: activeTab === 'employee' }" @click="activeTab = 'employee'">Employee</div>
     </div>
   <div class="adminstarteur" v-if="activeTab === 'admin'">
     <span class="error animated tada" id="msg"></span>
     <form name="form1" class="box" @submit.prevent="submit()">
-      <h5>Adminstarteur</h5>
+      <h5>Login</h5>
         <input type="text" v-model="user.email" name="email" id="email" placeholder="Email">
         <i class="typcn typcn-eye" id="eye" @click="toggleShowPassword"></i>
         <input :type="passwordVisible ? 'text' : 'password'" v-model="user.password" id="password" name="password" placeholder="Passsword">
@@ -26,9 +24,6 @@
             </label>
             <label for="">test</label>
           </div>
-          <div>
-            <a href="#" class="forgetpass">Forget Password?</a>
-          </div>
         </div>
         <!-- <input type="submit" value="Sign in" > -->
         <!-- <button class="">Sign in</button> -->
@@ -38,42 +33,8 @@
           </div>
         </button>
       </form>
-        <!-- <a href="#" class="dnthave">Don’t have an account? Sign up</a> -->
-      </div> 
-      <div class="employee" v-if="activeTab === 'employee'">
-    <span class="error animated tada" id="msg"></span>
-    <form name="form1" class="box" @submit.prevent="submit()">
-      <h5>Employee</h5>
-        <input type="text" v-model="user.email" name="email" id="email" placeholder="Email">
-        <i class="typcn typcn-eye" id="eye" @click="toggleShowPassword"></i>
-        <input :type="passwordVisible ? 'text' : 'password'" v-model="user.password" id="password" name="password" placeholder="Passsword">
-        <div class="container1">
-          <div>
-            <label class="container1">
-              <input type="checkbox">
-              <div class="checkmark"></div>
-              <small class="rmb">Remember me</small>
-            </label>
-            <label for="">test</label>
-          </div>
-          <div>
-            <a href="#" class="forgetpass">Forget Password?</a>
-          </div>
-        </div>
-        <!-- <input type="submit" value="Sign in" > -->
-        <!-- <button class="">Sign in</button> -->
-        <button class="cssbuttons-io-button btn1"> Get started
-          <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
-          </div>
-        </button>
-      </form>
-        <!-- <a href="#" class="dnthave">Don’t have an account? Sign up</a> -->
       </div> 
       </div> 
-       <!-- <div class="footer">
-      <span>Made with <i class="fa fa-heart pulse"></i> <a href="https://codepen.io/lordgamer2354">By Anees Khan</a></span>
-    </div> -->
 </div>
 
 <!-- <Loading v-if="loading" /> -->
@@ -413,7 +374,7 @@ label span {
 .typcn {
   position: absolute;
   left: 355px;
-  top: 282px;
+  top: 229px;
   color: #d5d5d5;
   font-size: 22px;
   cursor: pointer;
